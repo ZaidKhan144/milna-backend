@@ -3,9 +3,12 @@ import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import homeRoutes from './routes/home.js'
 
 const app = express()
 dotenv.config()
+
+app.use('/home', homeRoutes)
 
 app.use(express.json({limit: "30mb", extended: true}))
 app.use(express.urlencoded({limit: "20mb", extended: true}))
