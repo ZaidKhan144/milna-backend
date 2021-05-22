@@ -3,16 +3,17 @@ import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import homeRoutes from './routes/home.js'
+import groupRoutes from './routes/groups.js'
 
 const app = express()
 dotenv.config()
 
-app.use('/home', homeRoutes)
-
 app.use(express.json({limit: "30mb", extended: true}))
 app.use(express.urlencoded({limit: "20mb", extended: true}))
 app.use(cors())
+
+// always initialize app.use routes after initializing cors()
+app.use('/groups', groupRoutes)
 
 const PORT = process.env.PORT || 5000;
 

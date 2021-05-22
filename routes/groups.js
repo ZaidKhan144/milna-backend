@@ -1,9 +1,9 @@
 import express from 'express'
-import { getHome, createGroup } from '../controllers/home.js'
+import { getGroups, createGroup } from '../controllers/groups.js'
 
 const router = express.Router()
 
-router.get('/', getHome)
+router.get('/', getGroups)
 router.post('/', createGroup)
 
 export default router

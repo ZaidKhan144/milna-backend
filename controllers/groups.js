@@ -1,11 +1,12 @@
-import CreateGroup from '../models/CreateGroup.js'
+import Group from '../models/Group.js'
 
-export const getHome = async (req, res) => {
+export const getGroups = async (req, res) => {
     
     try {
-        const createGroup = await CreateGroup.find()
+        const groups = await Group.find()
 
-        res.status(200).json(createGroup)
+        res.status(200).json(groups)
+
     } catch (error) {
         res.status(404).json({ message: error.message })
     }
@@ -14,7 +15,7 @@ export const getHome = async (req, res) => {
 export const createGroup = async (req, res) => {
    const group = req.body 
 
-   const newGroup = new createGroup(group)
+   const newGroup = new Group(group)
 
     try {
         await newGroup.save()

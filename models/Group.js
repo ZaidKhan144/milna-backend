@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const groupSchema = mongoose.Schema({
-    title: String,
+    groupName: String,
     location: String,
     organizer: String,
     description: String,
@@ -9,7 +9,7 @@ const groupSchema = mongoose.Schema({
     selectedFile: String
 })
 
-const CreateGroup = mongoose.model('CreateGroup', groupSchema)
+const Group = mongoose.model('Group', groupSchema)
 
-export default CreateGroup
+export default Group
 
