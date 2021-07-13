@@ -5,5 +5,7 @@ An app for arranging online groups that host in-person or virtual events for peo
 ## Project Status
 This project is currently in development phase. 
 
-## 
-![](MilnaRead.gif)
+## Read 
+![](GIFs/MilnaRead.gif)
+
+## Create
