@@ -10,3 +10,12 @@ This project is currently in development phase.
 
 ## Create
 ![](GIFs/MilnaCreate.gif)
+
+## Tech used
+- Node.js
+- Express
+- MongoDB
+- RESTful APIs
+- dotenv
+- ESLint - A linter tool to standardize code
+- Prettier - Code formatter
