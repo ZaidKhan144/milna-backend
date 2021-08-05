@@ -64,7 +64,7 @@ export const updateGroup = async (req, res) => {
 
     // findByIdAndUpdate takes three parammeters: id, the group, and optional boolean new (it will
     // give the object after update)
-    const updatedGroup = await Group.findByIdAndUpdate(id, group, { new: true })
+    const updatedGroup = await Group.findByIdAndUpdate(_id, { ...group, _id }, { new: true })
     // Send it in response
     res.json(updatedGroup)
 }
