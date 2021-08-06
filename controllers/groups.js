@@ -68,3 +68,13 @@ export const updateGroup = async (req, res) => {
     // Send it in response
     res.json(updatedGroup)
 }
+
+export const deleteGroup = async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id')
+
+    await Group.findByIdAndRemove(id)
+
+    res.json({ message: 'Post deleted successfully'})
+}
