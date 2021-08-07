@@ -78,3 +78,16 @@ export const deleteGroup = async (req, res) => {
 
     res.json({ message: 'Post deleted successfully'})
 }
+
+export const joinGroup = async (req, res) => {
+    
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id')
+
+    const group = await Group.findById(id)
+    const updatedGroup = await Group.findByIdAndUpdate(id, { members: group.members + 1}, { new: true })
+
+    res.json(updatedGroup)
+}
+

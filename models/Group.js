@@ -5,8 +5,11 @@ const groupSchema = mongoose.Schema({
     location: String,
     organizer: String,
     description: String,
-    members: String,
-    selectedFile: String
+    members: {
+        type: Number,
+        default: 0,
+    },
+    selectedFile: String,
 })
 
 const Group = mongoose.model('Group', groupSchema)
